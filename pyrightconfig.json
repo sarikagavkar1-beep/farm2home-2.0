@@ -1,0 +1,7 @@
+{
+  "venvPath": "/home/ubuntu/farm2home",
+  "venv": ".venv",
+  "extraPaths": ["/home/ubuntu/farm2home/.venv/lib/python3.12/site-packages"],
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "basic"
+}

@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {"path": "/", "title": "Farm2Home Home"},
+    {"path": "/shop", "title": "Fresh Produce"},
+    {"path": "/product/:product_id", "title": "Product Details"},
+    {"path": "/farmers", "title": "Local Farmers"},
+    {"path": "/subscriptions", "title": "Subscriptions"},
+    {"path": "/cart", "title": "Shopping Cart"},
+    {"path": "/checkout", "title": "Checkout"},
+    {"path": "/dashboard", "title": "Dashboard"},
+    {"path": "/orders", "title": "My Orders"},
+    {"path": "/track/:order_id", "title": "Delivery Tracking"},
+    {"path": "/notifications", "title": "Notifications"},
+    {"path": "/how-it-works", "title": "How Farm2Home Works"},
+    {"path": "/admin", "title": "Admin Dashboard"}
+  ]
+}
