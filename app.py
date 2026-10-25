@@ -275,12 +275,23 @@ def start_scheduler(app):
     return scheduler
 
 
+
+# Create a Flask application instance for Vercel
+app = create_app()
+
+
 def main():
-    application = create_app()
-    if application.config.get("SCHEDULER_ENABLED", True):
-        start_scheduler(application)
-    application.run(host="0.0.0.0", port=application.config.get("PORT", 3000), debug=False, use_reloader=False)
+    if app.config.get("SCHEDULER_ENABLED", True):
+        start_scheduler(app)
+
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", app.config.get("PORT", 3000))),
+        debug=False,
+        use_reloader=False
+    )
 
 
 if __name__ == "__main__":
     main()
+
