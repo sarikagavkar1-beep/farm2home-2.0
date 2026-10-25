@@ -196,9 +196,29 @@ def _seed_demo_data(app):
         db.commit()
 
 
+
 def create_app(test_config=None):
-    app = Flask(__name__, template_folder="templates", static_folder="static", static_url_path="/static", instance_relative_config=True)
+    if os.environ.get("VERCEL"):
+        app = Flask(
+            __name__,
+            template_folder="templates",
+            static_folder="static",
+            static_url_path="/static",
+            instance_path="/tmp/farm2home-instance",
+        )
+    else:
+        app = Flask(
+            __name__,
+            template_folder="templates",
+            static_folder="static",
+            static_url_path="/static",
+            instance_relative_config=True,
+        )
+
     app.config.from_object(Config)
+    if test_config:
+        app.config.update(test_config)
+
     if test_config:
         app.config.update(test_config)
     if app.config.get("MAX_CONTENT_LENGTH") is None:
